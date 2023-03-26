@@ -2,7 +2,7 @@
 #include <cmath>
 #include "portaudio.h"
 
-#define SAMPLE_RATE (44100)
+#define SAMPLE_RATE (16000)
 #define FRAMES_PER_BUFFER (16)
 
 using namespace std;
