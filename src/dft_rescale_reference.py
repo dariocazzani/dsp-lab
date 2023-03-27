@@ -2,7 +2,6 @@ import numpy as np
 
 def DFT_rescale(x, factor):
   X = np.fft.fft(x)
-  breakpoint()
   # separate even and odd lengths
   parity = (len(X) % 2 == 0)
   N = int(len(X) / 2) + 1 if parity else int((len(X) + 1) / 2)
@@ -15,6 +14,7 @@ def DFT_rescale(x, factor):
       Y[ix] += X[n]
     else:
       break
+  breakpoint()
   # now rebuild a Hermitian-symmetric DFT
   Y = np.r_[Y, np.conj(Y[-2:0:-1])] if parity else np.r_[Y, np.conj(Y[-1:0:-1])]
   return np.real(np.fft.ifft(Y)) 

@@ -8,8 +8,7 @@
 #include <vector>
 
 #define SAMPLE_RATE (16000)
-#define FRAMES_PER_BUFFER (16)
-#define BUFFER_SIZE (1024)
+#define FRAMES_PER_BUFFER (512)
 
 using namespace std;
 
@@ -43,7 +42,7 @@ int main()
     PaStream *stream;
     PaError err;
     
-    DFT_rescale filter(SAMPLE_RATE, 2.0);
+    DFT_rescale filter(SAMPLE_RATE, 0.6);
 
     err = Pa_Initialize();
     if (err != paNoError) {
